@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@{
+    if (Model != null)
+    {
+    @:EmployeeId=@Model.EmpId
+    @:EmployeeName=@Model.EmpName
+    }
+    else
+    {
+    @: No Details are available
+    }
+}
+@ViewBag.totalTime
+
+<form action="/Emp/Index" method="post">
+    <input type="text" value="@Model.EmpName"/>
+    <input type="submit" value="Submit" name="btnSubmit"/>
+</form>

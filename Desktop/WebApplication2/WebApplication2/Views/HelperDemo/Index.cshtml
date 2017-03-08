@@ -1,0 +1,87 @@
+﻿@model WebApplication2.Models.Student
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<a href="~/Emp/Details" target="_parent">DetailsPages</a><br />
+
+@Html.ActionLink("DetialsPage", "Details", "Emp", new { }, new { target = "_blank" })
+
+<a href="@Url.Action("Details", "Emp", new { })" target="_top">Hello</a>
+
+<form></form>
+
+@{ Html.BeginForm();}----@*   <form>*@
+
+
+@{ Html.EndForm();}----@*  </form>*@
+
+@{
+    Html.BeginForm();
+
+    Html.EndForm();
+}
+
+@using (Html.BeginForm())
+{
+    @Html.Label("name", "Name")  @Html.TextBox("txtName", "", new { @class = "form-control", id = "name" })
+
+
+    //Radio button
+    @:Qualification
+    @Html.RadioButton("Qualification", "UnderGraduate", new { id = "UnderGraduate", @class = "radio" })@Html.Label("UnderGraduate", "UnderGraduate")
+    @Html.RadioButton("Qualification", "Graduate", new { id = "Graduate", @class = "radio" })@Html.Label("Graduate", "Graduate")
+    @Html.RadioButton("Qualification", "Post-Graducate", new { id = "Post-Graduate", @class = "radio" })@Html.Label("Post-Graduate", "Post-Graducate")
+
+
+    //DropDown List
+    <br/>
+    @Html.Label("Courses","Courses")
+    @Html.DropDownList("Courses", new List<SelectListItem>()
+                                {
+                                new SelectListItem() {Text="C#",Value="1" },
+                                new SelectListItem() {Text="Asp.net",Value="2" },
+                                new SelectListItem() {Text="MVC",Value="3" } },"Select Courses")
+
+    @Html.ListBox("lstCourses", new List<SelectListItem>()
+                                {
+                                new SelectListItem() {Text="C#",Value="1" },
+                                new SelectListItem() {Text="Asp.net",Value="2" },
+                                new SelectListItem() {Text="MVC",Value="3" } })
+
+    //using select list
+    @Html.DropDownList("Course",ViewBag.Courses as SelectList, "Select Courses")
+
+    @Html.DropDownList("Course", ViewBag.Courses as SelectList, "Select Courses",new { size=3})
+
+
+    @*@Html.Label(std => std.Id)
+    @Html.TextBoxFor(std=> std.Id)*@
+    <br />
+    @*@Html.Label("DeptId", "Department: ");
+                                    @Html.DropDownList("DeptId")*@
+                                    <br />
+                                    @*@Html.LabelFor(std => std.Name)
+                                    @Html.TextBoxFor(std => std.Name)
+                                    <br />
+                                    @Html.LabelFor(std => std.Salary)
+                                    @Html.TextBoxFor(std=>std.Salary)
+                                    <br />
+                                    @Html.CheckBoxFor(std=>std.IsActive)
+                                    @Html.LabelFor(std => std.IsActive)
+                                    <br />
+                                    @Html.LabelFor(std => std.EmailAddress)
+                                    @Html.TextBoxFor(std=>std.EmailAddress)
+                                    <br />
+                                    @Html.LabelFor(std => std.DateOfJoin)
+                                    @Html.TextBoxFor(std=>std.DateOfJoin)*@
+                                    <br />
+
+                                    @Html.DisplayFor(std=>std)
+    @Html.EditorFor(e=>e)
+                                    <input type="submit" name="btnSumit" value="Submit" />
+
+
+}

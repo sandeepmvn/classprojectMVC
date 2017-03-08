@@ -1,0 +1,64 @@
+﻿@model IEnumerable<WebApplication2.Models.EmployeeModel>
+@{
+    ViewBag.Title = "Details";
+}
+<br/>
+<table class="table table-bordered">
+    <tr>
+        <th>EmpId</th>
+        <th>EmpName</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+
+    <tr>
+        <td>@item.EmpId</td>
+        <td>@item.EmpName</td>
+    </tr>
+    }
+</table>
+
+@{ 
+    var n = 10;
+}
+
+@(n / 2)
+@{ 
+    var domain = "deccansoft";
+    @:sandeep.mvn@@@(domain).com
+}
+
+@for (int i = 0; i < 10; i++)
+{
+    @:This is @(i)th Line <br />
+}
+
+@{ 
+    string s = "<b>Hello</b>";
+    string image = "bdt.png";
+}
+@s
+@*
+commenting
+*@
+@Html.Raw(s)
+
+<img src="~/Content/Images/@image" class="img-circle"/>
+@{ 
+    ViewBag.Number = 12;
+}
+@Html.Partial("_PartialHello",Model)
+@{ 
+    
+    Html.RenderPartial("_PartialHello",Model);
+}
+
+@section scripts{
+
+    }
+
+
+
+@section footer{
+     @DateTime.Now
+    }

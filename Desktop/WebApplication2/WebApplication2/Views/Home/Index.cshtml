@@ -1,0 +1,11 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@DateTime.Now
+
+<form action="~/Home/Index" method="post">
+   @Html.AntiForgeryToken()
+    <input type="text" name="txtName" />
+    <input type="submit" name="btnSubmit" value="submit" class="btn btn-info"/>
+</form>
