@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+
+@using (Html.BeginForm())
+{
+    @Html.Label("Hobbies")
+    @Html.CheckBox("hobbies", new { value = "Cricket" }) @:<span>Cricket</span>
+    @*@Html.CheckBox("hobbies", new { value = "Chess" }) @:<span>Chess</span>
+    @Html.CheckBox("hobbies", new { value = "Reading Books"}) @:<span>Reading Books</span>
+    @Html.CheckBox("hobbies", new { value = "swimming" }) @:<span>swimming</span>*@
+    <input type="submit" value="Submit" name="btnSubmit" />
+
+    <input type="checkbox" name="hobbies" value="Football" /><span>Football</span>
+    <input type="checkbox" name="hobbies" value="Cricket" /><span>Cricket</span>
+    <input type="checkbox" name="hobbies" value="Table Tennis" /><span>Table Tennis</span>
+    <input type="checkbox" name="hobbies" value="Badminton" /><span>Badminton</span>
+    <br />
+    <input type="submit" name="btnSubmit" value="Submit" />
+}

@@ -152,11 +152,14 @@
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\HelperDemoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ModelBindersDemoController.cs" />
     <Compile Include="CustomFilter\LogAttribute.cs" />
     <Compile Include="CustomFilter\UserAgentAttribute.cs" />
+    <Compile Include="ExtensionMethods\HtmlExtensions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Address.cs" />
     <Compile Include="Models\EmployeeModel.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -175,6 +178,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="App_Code\MyHelperMethod.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -207,6 +211,14 @@
     <Content Include="Views\Emp\Details.cshtml" />
     <Content Include="Views\Shared\_PartialHello.cshtml" />
     <Content Include="Views\HelperDemo\Index.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Int32.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\EmailAddress.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\EmailAddress.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Int32.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\SayHello.cshtml" />
+    <Content Include="Views\HelperDemo\EnumExample.cshtml" />
+    <Content Include="Views\ModelBindersDemo\Index.cshtml" />
+    <Content Include="Views\ModelBindersDemo\Employee.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

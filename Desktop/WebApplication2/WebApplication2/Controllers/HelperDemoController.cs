@@ -39,7 +39,8 @@ namespace WebApplication2.Controllers
                 Name = "E1",
                 Salary = 10000,
                 IsActive = true,
-                DateOfJoin = DateTime.Now
+                DateOfJoin = DateTime.Now,
+                EmailAddress="sandeep.mvn@deccansoft.com"
             };
 
             return View(std);
@@ -58,6 +59,11 @@ namespace WebApplication2.Controllers
             ModelState.Clear();
             std.Name = "San";
             return View(std);
+        }
+
+        public ActionResult EnumExample()
+        {
+            return View();
         }
     }
 }

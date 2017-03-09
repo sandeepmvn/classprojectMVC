@@ -1,0 +1,16 @@
+﻿@using System.Web.Mvc;
+@helper RenderTable(int number)
+{
+    <table>
+        @for (int i = 1; i <= 10; i++)
+        {
+        <tr>
+            <td>@number</td>
+            <td>*</td>
+            <td>@i</td>
+            <td>=</td>
+            <td>@(number * i)</td>
+        </tr>
+        }
+    </table>
+}

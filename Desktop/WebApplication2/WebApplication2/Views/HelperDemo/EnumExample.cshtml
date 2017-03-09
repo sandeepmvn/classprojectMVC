@@ -1,0 +1,9 @@
+﻿@model WebApplication2.Models.Student
+@{
+    ViewBag.Title = "EnumExample";
+}
+
+<h2>EnumExample</h2>
+
+@Html.EnumDropDownListFor(std=>std.TypeOfStudent,"Select type of Student")
+
