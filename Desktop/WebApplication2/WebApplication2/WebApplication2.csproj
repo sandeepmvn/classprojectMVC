@@ -148,6 +148,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\DataAnnotationDemoController.cs" />
     <Compile Include="Controllers\EmpController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\HelperDemoController.cs" />
@@ -155,6 +156,7 @@
     <Compile Include="Controllers\ModelBindersDemoController.cs" />
     <Compile Include="CustomFilter\LogAttribute.cs" />
     <Compile Include="CustomFilter\UserAgentAttribute.cs" />
+    <Compile Include="CustomModelBinder\CustomEmployeeBinder.cs" />
     <Compile Include="ExtensionMethods\HtmlExtensions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -162,6 +164,7 @@
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\EmployeeModel.cs" />
     <Compile Include="Models\Student.cs" />
+    <Compile Include="Models\UserProfile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -213,15 +216,15 @@
     <Content Include="Views\HelperDemo\Index.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Int32.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\EmailAddress.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\EmailAddress.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\Int32.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\SayHello.cshtml" />
     <Content Include="Views\HelperDemo\EnumExample.cshtml" />
     <Content Include="Views\ModelBindersDemo\Index.cshtml" />
     <Content Include="Views\ModelBindersDemo\Employee.cshtml" />
+    <Content Include="Views\DataAnnotationDemo\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Demo\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

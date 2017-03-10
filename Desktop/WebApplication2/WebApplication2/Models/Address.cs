@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace WebApplication2.Models
 {
@@ -12,7 +14,7 @@ namespace WebApplication2.Models
         public string City
         { get; set; }
     }
-
+    [ModelBinder(typeof(CustomEmployeeBinder))]
     public class Employee
     {
         public string Name
@@ -22,5 +24,7 @@ namespace WebApplication2.Models
         public Address OffAddress
         { get; set; }
         public string Photo { get; set; }
+        public int Age { get; set; }
     }
+
 }

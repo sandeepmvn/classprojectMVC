@@ -28,8 +28,14 @@ namespace WebApplication2.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Employee(Employee employee,HttpPostedFileBase photo)
+        public ActionResult Employee(Employee employee,HttpPostedFileBase photo,FormCollection fc)
         {
+
+            Address offAdress = new Address();
+            Address resAdress = new Address();
+            UpdateModel(offAdress, "offAddress");
+           bool b= TryUpdateModel(resAdress, "resAdress");
+
             if (photo != null)
             {
                 string fileName = photo.FileName;
