@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace WebApplication2.Models
 {
-    public class UserProfile
+    public class UserProfile:IValidatableObject
     {
-
+        [Remote("IsUserNameExist", "DataAnnotationDemo")]
         [Required(ErrorMessage = "User Name is Required")]
-        [Display(Name="Name")]
+        [Display(Name = "Name")]
         public string UserName { get; set; }
         [Required(ErrorMessage = "Password is Required")]
         [DataType("password")]
@@ -34,5 +35,24 @@ namespace WebApplication2.Models
         public string Comments { get; set; }
         [FileExtensions(Extensions = "png,jpg,jpeg,gif")]
         public string Photo { get; set; }
+        [Required]
+        [CustomValidation(typeof(DesignationValidator), "IsDesignationValid")]
+        public string Designation { get; set; }
+
+        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        {
+            List<ValidationResult> lst = new List<ValidationResult>();
+            if(Designation.ToLower().Equals("senior"))
+            {
+                if (!(Rating > 5))
+                    lst.Add(new ValidationResult("Invalid Designation based on Rationg"));
+            }
+            else if(Designation.ToLower().Equals("junior"))
+            {
+                if (!(Rating < 5))
+                    lst.Add(new ValidationResult("Invalid Designation based on Rationg"));
+            }
+            return lst;
+        }
     }
 }

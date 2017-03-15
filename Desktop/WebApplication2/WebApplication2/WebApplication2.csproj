@@ -148,6 +148,8 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CookieDemoController.cs" />
     <Compile Include="Controllers\DataAnnotationDemoController.cs" />
     <Compile Include="Controllers\EmpController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
@@ -157,6 +159,8 @@
     <Compile Include="CustomFilter\LogAttribute.cs" />
     <Compile Include="CustomFilter\UserAgentAttribute.cs" />
     <Compile Include="CustomModelBinder\CustomEmployeeBinder.cs" />
+    <Compile Include="CustomUnobstructiveValidation\CustomRangeAttribute.cs" />
+    <Compile Include="CustomValidations\DesignationValidator.cs" />
     <Compile Include="ExtensionMethods\HtmlExtensions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -165,6 +169,7 @@
     <Compile Include="Models\EmployeeModel.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Models\UserProfile.cs" />
+    <Compile Include="Models\UserProfileModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -221,6 +226,10 @@
     <Content Include="Views\ModelBindersDemo\Index.cshtml" />
     <Content Include="Views\ModelBindersDemo\Employee.cshtml" />
     <Content Include="Views\DataAnnotationDemo\Index.cshtml" />
+    <Content Include="Views\Shared\Error1.cshtml" />
+    <Content Include="Views\CookieDemo\Index.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\About.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

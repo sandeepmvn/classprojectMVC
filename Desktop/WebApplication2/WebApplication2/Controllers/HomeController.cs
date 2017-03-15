@@ -7,13 +7,14 @@ using WebApplication2.Models;
 
 namespace WebApplication2.Controllers
 {
-
+    // [HandleError(ExceptionType = typeof(Exception), View = "Error1")]
     public class HomeController : Controller
     {
-        [Log2]
+
         public ActionResult Index()
         {
-            return View();
+            string cs = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
+            return Content(cs);
         }
         [ValidateInput(false)]
         [ValidateAntiForgeryToken]
@@ -25,6 +26,7 @@ namespace WebApplication2.Controllers
 
         public ActionResult About()
         {
+
             ViewBag.Message = "Your application description page.";
 
             return View();

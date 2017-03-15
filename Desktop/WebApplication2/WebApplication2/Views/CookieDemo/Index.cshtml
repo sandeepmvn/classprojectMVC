@@ -1,0 +1,17 @@
+﻿
+
+@{ 
+    ViewBag.Title = "Cookie";
+}
+<form action="~/CookieDemo/Create" method="post">
+    Cookie Key:-<input type="text" name="txtKey" />
+    Cookie Value:- <input type="text" name="txtValue" />
+    <input type="checkbox" name="chkIsPersistent" value="Persistent" /><span>Is Persistent</span>
+    <input type="checkbox" name="chkIsSecure" value="Secure" /><span>Is Secured</span>
+    <input type="submit" value="Create" name="btnCreate"/>
+    <input type="submit" value="Request" name="btnRequest" formaction="~/CookieDemo/RequestCookie"/>
+    <input type="submit" value="Remove" name="btnRemove"  formaction="~/CookieDemo/Remove"/>
+    <input type="submit" value="GetAll" name="btnGetAll" formaction="~/CookieDemo/GetAll" />
+</form>
+
+@ViewBag.Cookie

@@ -17,5 +17,15 @@ namespace WebApplication2
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
+
+        protected void Application_Error()
+        {
+            Exception ex = Context.Error;
+            if (ex is ApplicationException)
+            {
+                Response.Write("Application_Error: " + ex.Message);
+                Context.ClearError(); //Further processing of error is stopped.
+            }
+        }
     }
 }

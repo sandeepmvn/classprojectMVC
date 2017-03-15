@@ -25,5 +25,12 @@ namespace WebApplication2.Controllers
             ModelState.AddModelError("", "");
             return View(userProfile);
         }
+
+        public ActionResult IsUserNameExist(string userName)
+        {
+            if (userName.ToLower() == "demo")
+                return Json("UserName is already is Exist", JsonRequestBehavior.AllowGet);
+            return Json(false, JsonRequestBehavior.AllowGet);
+        }
     }
 }
