@@ -79,7 +79,11 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -156,11 +160,33 @@
     <Compile Include="Controllers\HelperDemoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ModelBindersDemoController.cs" />
+    <Compile Include="Controllers\WebCachingDemoController.cs" />
     <Compile Include="CustomFilter\LogAttribute.cs" />
     <Compile Include="CustomFilter\UserAgentAttribute.cs" />
     <Compile Include="CustomModelBinder\CustomEmployeeBinder.cs" />
     <Compile Include="CustomUnobstructiveValidation\CustomRangeAttribute.cs" />
     <Compile Include="CustomValidations\DesignationValidator.cs" />
+    <Compile Include="Department.cs">
+      <DependentUpon>EmployeeEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Employee.cs">
+      <DependentUpon>EmployeeEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeEntities.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmployeeEntities.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeEntities.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmployeeEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeEntities.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmployeeEntities.edmx</DependentUpon>
+    </Compile>
     <Compile Include="ExtensionMethods\HtmlExtensions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -177,6 +203,16 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Images\bdt.png" />
     <Content Include="Content\Test.txt" />
+    <Content Include="EmployeeEntities.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EmployeeEntities.edmx</DependentUpon>
+      <LastGenOutput>EmployeeEntities.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="EmployeeEntities.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EmployeeEntities.edmx</DependentUpon>
+      <LastGenOutput>EmployeeEntities.cs</LastGenOutput>
+    </Content>
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -187,6 +223,13 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="App_Code\MyHelperMethod.cshtml" />
+    <EntityDeploy Include="EmployeeEntities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>EmployeeEntities.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="EmployeeEntities.edmx.diagram">
+      <DependentUpon>EmployeeEntities.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -199,7 +242,9 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -230,6 +275,7 @@
     <Content Include="Views\CookieDemo\Index.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\About.cshtml" />
+    <Content Include="Views\WebCachingDemo\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -242,6 +288,9 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

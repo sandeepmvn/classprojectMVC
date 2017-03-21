@@ -60,5 +60,28 @@ namespace WebApplication2.Controllers
             return View("Index");
         }
 
+
+        public ActionResult CookieDic(FormCollection fc)
+        {
+            HttpCookie cookie = Request.Cookies[fc["txtKey"]];
+            if (cookie == null)
+                cookie = new HttpCookie(fc["txtKey"]);
+            string subkey = fc["txtSubKey"];
+            cookie.Values[subkey] = fc["txtValue"];
+            if (fc["chkIsPersistent"] == "Persistent")
+                cookie.Expires = DateTime.MaxValue;
+            if (fc["chkIsSecure"] == "Secure")
+                cookie.Secure = true;
+            Response.Cookies.Add(cookie);
+            return View("Index");
+        }
+
+        public ActionResult SessionsDemo()
+        {
+        string url = "http://" + Request.Url.Host + ":" + Request.Url.Port +
+    Response.ApplyAppPathModifier(Request.ApplicationPath) + "/Home/Index";
+            return View();
+        }
+
     }
 }
