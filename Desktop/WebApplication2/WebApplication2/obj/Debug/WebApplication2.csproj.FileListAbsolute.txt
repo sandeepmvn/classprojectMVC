@@ -101,6 +101,5 @@ C:\Users\Home\Desktop\WebApplication2\WebApplication2\bin\System.Web.WebPages.De
 C:\Users\Home\Desktop\WebApplication2\WebApplication2\bin\System.Web.WebPages.Razor.xml
 C:\Users\Home\Desktop\WebApplication2\WebApplication2\bin\Antlr3.Runtime.pdb
 C:\Users\Home\Desktop\WebApplication2\WebApplication2\bin\Newtonsoft.Json.xml
-C:\Users\Home\Desktop\WebApplication2\WebApplication2\obj\Debug\WebApplication2.csprojResolveAssemblyReference.cache
 C:\Users\Home\Desktop\WebApplication2\WebApplication2\obj\Debug\WebApplication2.dll
 C:\Users\Home\Desktop\WebApplication2\WebApplication2\obj\Debug\WebApplication2.pdb

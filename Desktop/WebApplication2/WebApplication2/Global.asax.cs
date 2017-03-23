@@ -27,5 +27,27 @@ namespace WebApplication2
                 Context.ClearError(); //Further processing of error is stopped.
             }
         }
+
+
+        protected void Application_AuthenticateRequest(object sender, EventArgs args)
+        {
+            if (Request.IsAuthenticated)
+            {
+                string[] roles = null;
+                switch (User.Identity.Name)
+                {
+                    case "Admin":
+                        roles = new string[] { "Create", "Edit", "Delete", "View" };
+                        break;
+                    case "u1":
+                        roles = new string[] { "Edit", "Delete", "View" };
+                        break;
+                    case "u2":
+                        roles = new string[] { "View" };
+                        break;
+                }
+            Context.User = new System.Security.Principal.GenericPrincipal(User.Identity, roles);
+            }
+        }
     }
 }

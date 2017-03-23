@@ -153,6 +153,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AuthenticationDemoController.cs" />
     <Compile Include="Controllers\CookieDemoController.cs" />
     <Compile Include="Controllers\DataAnnotationDemoController.cs" />
     <Compile Include="Controllers\EmpController.cs" />
@@ -166,27 +167,6 @@
     <Compile Include="CustomModelBinder\CustomEmployeeBinder.cs" />
     <Compile Include="CustomUnobstructiveValidation\CustomRangeAttribute.cs" />
     <Compile Include="CustomValidations\DesignationValidator.cs" />
-    <Compile Include="Department.cs">
-      <DependentUpon>EmployeeEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Employee.cs">
-      <DependentUpon>EmployeeEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EmployeeEntities.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EmployeeEntities.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EmployeeEntities.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EmployeeEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EmployeeEntities.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EmployeeEntities.edmx</DependentUpon>
-    </Compile>
     <Compile Include="ExtensionMethods\HtmlExtensions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -203,16 +183,6 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Images\bdt.png" />
     <Content Include="Content\Test.txt" />
-    <Content Include="EmployeeEntities.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>EmployeeEntities.edmx</DependentUpon>
-      <LastGenOutput>EmployeeEntities.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="EmployeeEntities.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>EmployeeEntities.edmx</DependentUpon>
-      <LastGenOutput>EmployeeEntities.cs</LastGenOutput>
-    </Content>
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -223,13 +193,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="App_Code\MyHelperMethod.cshtml" />
-    <EntityDeploy Include="EmployeeEntities.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>EmployeeEntities.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="EmployeeEntities.edmx.diagram">
-      <DependentUpon>EmployeeEntities.edmx</DependentUpon>
-    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -276,6 +239,7 @@
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\About.cshtml" />
     <Content Include="Views\WebCachingDemo\Index.cshtml" />
+    <Content Include="Views\AuthenticationDemo\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

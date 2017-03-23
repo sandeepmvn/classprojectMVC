@@ -5,12 +5,26 @@
 
 <h2>About</h2>
 
-@if (Request.Cookies["Authcookie"] == null)
-{
-    <li>@Html.ActionLink("Login", "Login", "Account")</li>
-}
-else
-{
-    <li>@Html.ActionLink("Logout", "LogOut", "Account")</li>
-    <li><a href="#">@Request.Cookies["Authcookie"].Value</a></li>
+@*@if (Request.Cookies["Authcookie"] == null)
+    {
+        <li>@Html.ActionLink("Login", "Login", "Account")</li>
+    }
+    else
+    {
+        <li>@Html.ActionLink("Logout", "LogOut", "Account")</li>
+        <li><a href="#">@Request.Cookies["Authcookie"].Value</a></li>
+    }*@
+
+
+
+@{
+
+    if (User.Identity.IsAuthenticated)
+    {
+    @: Hello @User.Identity.Name @Html.ActionLink("Logout", "Logout", "Account")
+    }
+    else
+    {
+    @Html.ActionLink("Login", "Login", "Account")
+    }
 }
